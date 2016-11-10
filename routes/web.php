@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return "Welcome to sell my notes!";
+    return view('welcome');
 });
