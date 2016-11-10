@@ -83,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Note To Myself
+                    Sell My Notes
                 </div>
                 <div class="subtitle m-b-md">
                     Landing Page
