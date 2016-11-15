@@ -1,0 +1,11 @@
+td {
+    vertical-align: top;
+}
+table {
+    width: 100%;
+}
+.image {
+    width: 100%;
+    border: solid;
+    background: lightblue;
+}
