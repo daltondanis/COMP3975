@@ -22,3 +22,6 @@ Route::get('/home', 'HomeController@index');
 Route::get('/lei', 'SchoolController@create');
 
 Route::get('/jason', 'ListingsController@listings');
+
+Route::get('/post', 'PostController@create');
+Route::post('/post', 'PostController@store');
