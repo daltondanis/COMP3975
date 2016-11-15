@@ -13,14 +13,11 @@
                             Title
                             <input type="text" name="title"><br>
 
-
-                            {{--dropdown menu for schools - shane populate stuff here--}}
                             School
-                            <select name="school">
-                                <option value="1">UBC</option>
-                                <option value="2">BCIT</option>
-                                <option value="3">SFU</option>
-                                <option value="4">Douglas</option>
+                            <select name="schools">
+                                @foreach($schools as $school)
+                                    <option value="{{$school}}">{{$school}}</option>
+                                @endforeach
                             </select><br>
 
 

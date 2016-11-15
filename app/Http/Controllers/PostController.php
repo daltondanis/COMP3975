@@ -11,7 +11,8 @@ class PostController extends Controller
 {
     public function create()
     {
-        return view('post');
+        $schools = DB::table('schools')->orderBy('name', 'asc')->pluck('name','id');
+        return view('post', compact('schools'));
     }
 
     public function store()
