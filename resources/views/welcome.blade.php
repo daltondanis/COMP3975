@@ -88,7 +88,6 @@
                 <div class="subtitle m-b-md">
                     Landing Page
                 </div>
-				<a href="{{ url('/post') }}">Post</a>
             </div>
         </div>
     </body>
