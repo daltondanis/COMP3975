@@ -24,5 +24,5 @@ class SchoolController extends Controller
             ['name' => 'Camosun College']
         ]);
         echo "succeed";
-    }i
+    }
 }
