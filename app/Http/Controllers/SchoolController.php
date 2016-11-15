@@ -9,7 +9,7 @@ use DB;
 class SchoolController extends Controller
 {
     public function create(Request $request) {
-        DB::table('schools')->insert(
+        DB::table('schools')->insert([
             ['name' => 'University of British Columbia'],
             ['name' => 'Langara College'],
             ['name' => 'Simon Fraser University'],
@@ -22,7 +22,7 @@ class SchoolController extends Controller
             ['name' => 'University of Victoria'],
             ['name' => 'Vancouver island university'],
             ['name' => 'Camosun College']
-        );
+        ]);
         echo "succeed";
-    }
+    }i
 }
