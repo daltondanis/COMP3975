@@ -1,17 +1,3 @@
-{{--
-@php
-
-require_once("Listing.php");
-
-$listings = [
-        new Listing("IMAGE1", "COMP1234", 40, "Java 1"),
-        new Listing("IMAGE2", "COMP1111", 60, "Web Dev"),
-        new Listing("IMAGE3", "COMP3131", 30, "Algorithms"),
-        new Listing("IMAGE4", "COMP9876", 125, "Business Law")
-];
-
-@endphp
---}}
 
 @extends('layouts.app')
 
@@ -24,7 +10,7 @@ $listings = [
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <table>
-                            {{--
+
                             @foreach($listings as $key => $listing)
                                 @if($key % 3 == 0)
                                     <tr>
@@ -48,9 +34,8 @@ $listings = [
                                     </td>
                                 @endif
                             @endforeach
-                            --}}
 
-
+                            {{--
                             <tr>
                                 <td>
                                     <section class="image">IMAGE1</section>
@@ -82,7 +67,7 @@ $listings = [
                                     <p>blah blah blah</p>
                                 </td>
                             </tr>
-
+                            --}}
                         </table>
                     </div>
                 </div>
