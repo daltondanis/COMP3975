@@ -13,8 +13,8 @@ function putListing($listing)
     echo
     '
     <td>
-        <img src="' . URL::to('/') . $listing->image . '" alt="No image">
-        <p>' . $listing->courseId . ' - ' . $listing->price . '</p>
+        <img src="' . URL::to('/') . $listing->image . '" alt="No image" class="note">
+        <p>' . $listing->courseId . ' - $' . $listing->price . '</p>
         <p>' . $listing->courseName . '</p>
     </td>
     ';

@@ -14,17 +14,19 @@ class ListingsController extends Controller
      */
     public function listings()
     {
-        /*
+
         // Grabs from database
         $preview  = new NotePreview();
+        //$preview->insertTestData();
         $listings = $preview->getNotes();
-        */
+        /*
         $listings = [
             new Listing("COMP1234", 40, "Java 1", "/images/image1.png"),
             new Listing("COMP1111", 60, "Web Dev", "/images/image2.png"),
             new Listing("COMP3131", 30, "Algorithms", "/images/image3.png"),
-            new Listing("COMP9876", 125, "Business Law", "/images/image4.png")
+            new Listing("COMP9876", 125, "Business Law", "/images/nra_map.jpg")
         ];
+        */
         return view('listings', compact('listings'));
     }
 }
