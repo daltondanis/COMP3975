@@ -12,7 +12,7 @@
                     <tr>
                         <td>
                             <div class="group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="tableLabel">Username (Email)</label><br>
+                                <label for="email" class="tableLabel">Email</label><br>
                                 <input id="email" type="email" class="input" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))

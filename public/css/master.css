@@ -57,6 +57,10 @@ body{
     text-decoration: none;
 }
 
+.headerLink:active, .headerLink:visited{
+    text-decoration: none;
+}
+
 .brand{
     color:#424548;
     font-weight: bold;
@@ -65,11 +69,7 @@ body{
     font-size: 200%;
 }
 
-.brand:hover{
-    text-decoration: none;
-}
-
-.brand:visited{
+.brand:hover, .brand:visited, .brand:active{
     text-decoration: none;
 }
 
@@ -96,10 +96,9 @@ body{
 .loginPanel{
     background-color: #424548;
     color:white;
-    max-width: 400px;
+    max-width: 350px;
     margin-left: auto;
     margin-right: auto;
-    min-height: 500px;
 }
 
 .login-title{
@@ -116,7 +115,7 @@ body{
 .loginTable{
     margin-left: auto;
     margin-right: auto;
-
+    padding-bottom: 80px;
     border-collapse: separate;
     border-spacing:0px 20px;
 }
@@ -135,6 +134,7 @@ body{
 }
 
 .PanelButtonWrapper{
+    margin-top: 30px;
 }
 
 .PanelButton{
@@ -143,7 +143,6 @@ body{
     width: 100px;
     height: 50px;
     font-size: large;
-
 }
 
 .PanelButton:hover{
