@@ -1,0 +1,10 @@
+td {
+    vertical-align: top;
+}
+table {
+    width: 100%;
+}
+img.note {
+    max-width: 200px;
+    max-height: 200px;
+}
