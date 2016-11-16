@@ -4,8 +4,7 @@ td {
 table {
     width: 100%;
 }
-.image {
-    width: 100%;
-    border: solid;
-    background: lightblue;
+img.note {
+    max-width: 200px;
+    max-height: 200px;
 }

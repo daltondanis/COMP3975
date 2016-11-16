@@ -15,12 +15,12 @@ class NotePreview
         foreach ($notes as $note)
         {
             //$user = DB::table('users')->where('id', $note->user_id)->first();
-            $img = DB::table('photos')->where('note_id', $note->id)->first();
+            $img = $note->imagePath;
             $courseID = $note->courseName;
+            $courseName = $note->title;
             $price = $note->price;
             //$username = $user->username;
-            $image = $img->path;
-            $listing = new Listing($image, $courseID, $price, "COMP####");
+            $listing = new Listing($courseID, $price, $courseName, $img);
             $listings[] = $listing;
         }
         return $listings;
