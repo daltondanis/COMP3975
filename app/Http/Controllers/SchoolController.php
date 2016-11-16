@@ -13,16 +13,16 @@ class SchoolController extends Controller
             ['name' => 'University of British Columbia'],
             ['name' => 'Langara College'],
             ['name' => 'Simon Fraser University'],
-            ['name' => 'Vancouver community college'],
+            ['name' => 'Vancouver Community College'],
             ['name' => 'Kwantlen Polytechnic University'],
-            ['name' => 'The art institute of vancouver'],
+            ['name' => 'The Art Institute of Vancouver'],
             ['name' => 'Emily Carr University of Art and Design'],
             ['name' => 'Capilano University'],
             ['name' => 'Douglas College'],
             ['name' => 'University of Victoria'],
-            ['name' => 'Vancouver island university'],
+            ['name' => 'Vancouver Island University'],
             ['name' => 'Camosun College']
         ]);
-        echo "succeed";
+        echo "Schools successfully added to the database.";
     }
 }

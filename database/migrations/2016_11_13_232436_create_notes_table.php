@@ -25,9 +25,9 @@ class CreateNotesTable extends Migration
             $table->string('program');
             $table->integer('yearTaken')->unsigned();
             $table->string('teacher');
-            $table->string('imagePath');
+            $table->string('imagePath')->nullable();
             $table->float('price', 8, 2);
-            $table->text('comments');
+            $table->text('description');
         });
     }
 

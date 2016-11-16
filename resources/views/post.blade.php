@@ -9,32 +9,34 @@
 
                     <div class="panel-body">
 
-                        <form method="POST">
+                        <form method="POST" enctype="multipart/form-data">
                             Title
-                            <input type="text" name="title"><br>
+                            <input type="text" name="title" required><br>
 
                             School
                             <select name="schools">
-                                @foreach($schools as $school)
-                                    <option value="{{$school}}">{{$school}}</option>
+                                @foreach($schools as $key => $school)
+                                    <option value="{{$key}}">{{$school}}</option>
                                 @endforeach
                             </select><br>
 
-
                             Program
-                            <input type="text" name="program"><br>
+                            <input type="text" name="program" required><br>
                             Course
-                            <input type="text" name="course"><br>
+                            <input type="text" name="course" required><br>
                             Year Taken
-                            <input type="number" name="yearTaken"><br>
+                            <input type="number" name="yearTaken" required><br>
                             Instructor
-                            <input type="text" name="instructor"><br>
+                            <input type="text" name="instructor" required><br>
                             Description
-                            <textarea name="comments"></textarea><br>
+                            <textarea name="description"></textarea><br>
                             Price
-                            <input type="number" name="price"><br>
+                            <input type="number" name="price" required><br>
+
+                            <input type="file" name="myImage" required>
 
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="user" value=" {{ \Auth::user()->id }}">
 
                             <br>
                             <br>

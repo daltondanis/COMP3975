@@ -11,17 +11,22 @@
 |
 */
 
+Route::group(array('before' => 'auth'), function(){
+    // your routes
+
+    Route::get('/', 'HomeController@index');
+});
+
 Route::get('/', function () {
-    return view('welcome');
+    Route::get('/home', 'ListingsController@listings');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/schools', 'SchoolController@create');
 
-Route::get('/lei', 'SchoolController@create');
-
-Route::get('/jason', 'ListingsController@listings');
+Route::get('/home', 'ListingsController@listings');
+Route::get('/', 'ListingsController@listings');
 
 Route::get('/post', 'PostController@create');
 Route::post('/post', 'PostController@store');
