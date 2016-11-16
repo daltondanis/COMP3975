@@ -17,10 +17,6 @@ Route::group(array('before' => 'auth'), function(){
     Route::get('/', 'HomeController@index');
 });
 
-Route::get('/', function () {
-    Route::get('/home', 'ListingsController@listings');
-});
-
 Auth::routes();
 
 Route::get('/schools', 'SchoolController@create');
@@ -30,3 +26,4 @@ Route::get('/', 'ListingsController@listings');
 
 Route::get('/post', 'PostController@create');
 Route::post('/post', 'PostController@store');
+

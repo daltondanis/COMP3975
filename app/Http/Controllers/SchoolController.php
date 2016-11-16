@@ -8,7 +8,7 @@ use DB;
 
 class SchoolController extends Controller
 {
-    public function create(Request $request) {
+    public function create() {
         DB::table('schools')->insert([
             ['name' => 'University of British Columbia'],
             ['name' => 'Langara College'],

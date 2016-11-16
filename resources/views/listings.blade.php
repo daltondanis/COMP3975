@@ -1,5 +1,4 @@
-
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
 
 @php
 
@@ -23,29 +22,15 @@ function putListing($listing)
 @endphp
 
 @section('content')
-    <link rel="stylesheet" href="/css/listings.css">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <table>
-                            @foreach ($listings as $key => $listing)
-                                @if ($key % 3 == 0)
-                                    <tr>
-                                        {{ putlisting($listing) }}
-                                @elseif ($key % 3 == 2)
-                                        {{ putListing($listing) }}
-                                    </tr>
-                                @else
-                                    {{ putListing($listing) }}
-                                @endif
-                            @endforeach
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @foreach ($listings as $key => $listing)
+        @if ($key % 3 == 0)
+            <tr>
+                {{ putlisting($listing) }}
+        @elseif ($key % 3 == 2)
+                {{ putListing($listing) }}
+            </tr>
+        @else
+            {{ putListing($listing) }}
+        @endif
+    @endforeach
 @endsection
