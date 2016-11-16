@@ -18,5 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
 Route::get('/lei', 'SchoolController@create');
+
+Route::get('/post',function (){
+    return view('post');
+});

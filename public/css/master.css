@@ -1,0 +1,156 @@
+@font-face {
+    font-family:Macondo Grotesk;
+    src:url('../font/Macondo_Grotesk.ttf');
+}
+
+@font-face {
+    font-family:Bebas Neue;
+    src:url('../font/BebasNeue.otf');
+}
+
+@font-face {
+    font-family:Blanch Condensed;
+    src:url('../font/BLANCH_CAPS_LIGHT.otf');
+}
+
+body{
+    background-color: #f5d76e;
+    margin-top: 0;
+    height: 100%;
+    font-family: Arial;
+}
+
+.container{
+    background-color: #fafafa;
+    max-width: 850px;
+    height: 100%;
+    padding-top: 30px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: Arial;
+}
+
+.header{
+    display:inline-block;
+}
+
+.left-header{
+    display: inline-block;
+}
+
+.right-header{
+    display: inline-block;
+
+}
+
+.headerLink{
+    color: #f4d03f;
+    font-family: Bebas Neue;
+    font-size: 150%;
+}
+
+.headerLink:hover{
+    color: #f0ad4e;
+    text-decoration: none;
+}
+
+.headerLink:active, .headerLink:visited{
+    text-decoration: none;
+}
+
+.brand{
+    color:#424548;
+    font-weight: bold;
+    font-size: large;
+    font-family: Macondo Grotesk;
+    font-size: 200%;
+}
+
+.brand:hover, .brand:visited, .brand:active{
+    text-decoration: none;
+}
+
+.list li{
+    display: inline-block;
+    list-style-type:none;
+    margin-right:60px;
+}
+
+.img_logo{
+    margin-left: 30px;
+    width: 80px;
+}
+
+.content{
+    background-color: #fafafa;
+    color:white;
+    max-width: 500px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginPanel{
+    background-color: #424548;
+    color:white;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-title{
+   font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+}
+.group{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginTable{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 80px;
+    border-collapse: separate;
+    border-spacing:0px 20px;
+}
+
+.tableLabel{
+    color: white;
+}
+
+.tableLink{
+    color: white;
+    display: block;
+}
+
+.tableLink:hover{
+    color: #f5d76e;
+}
+
+.PanelButtonWrapper{
+    margin-top: 30px;
+}
+
+.PanelButton{
+    background-color: #f4d03f;
+    font-weight: bolder;
+    width: 100px;
+    height: 50px;
+    font-size: large;
+}
+
+.PanelButton:hover{
+    background-color: #f0ad4e;
+}
+
+.input{
+    color: black;
+    width: 250px;
+}
+
