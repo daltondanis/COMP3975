@@ -1,6 +1,27 @@
 
 @extends('layouts.app')
 
+@php
+
+/*
+Displays a single listing
+
+@param {Listing} $listing
+*/
+function putListing($listing)
+{
+    echo
+    '
+    <td>
+        <img src="' . URL::to('/') . $listing->image . '" alt="No image">
+        <p>' . $listing->courseId . ' - ' . $listing->price . '</p>
+        <p>' . $listing->courseName . '</p>
+    </td>
+    ';
+}
+
+@endphp
+
 @section('content')
     <link rel="stylesheet" href="/css/listings.css">
 
@@ -10,36 +31,15 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <table>
-
-                            {{--
-
-                            <section>'s will be replaced with <img>'s
-
-                            <img href="{{ $listing->image }}">
-
-                            --}}
-
                             @foreach ($listings as $key => $listing)
                                 @if ($key % 3 == 0)
                                     <tr>
-                                        <td>
-                                            <section class="image">{{ $listing->image }}</section>
-                                            <p>{{ $listing->courseId }} - {{ $listing->price }}</p>
-                                            <p>{{ $listing->courseName }}</p>
-                                        </td>
+                                        {{ putlisting($listing) }}
                                 @elseif ($key % 3 == 2)
-                                        <td>
-                                            <section class="image">{{ $listing->image }}</section>
-                                            <p>{{ $listing->courseId }} - {{ $listing->price }}</p>
-                                            <p>{{ $listing->courseName }}</p>
-                                        </td>
+                                        {{ putListing($listing) }}
                                     </tr>
                                 @else
-                                    <td>
-                                        <section class="image">{{ $listing->image }}</section>
-                                        <p>{{ $listing->courseId }} - {{ $listing->price }}</p>
-                                        <p>{{ $listing->courseName }}</p>
-                                    </td>
+                                    {{ putListing($listing) }}
                                 @endif
                             @endforeach
                         </table>

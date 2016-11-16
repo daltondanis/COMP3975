@@ -20,10 +20,10 @@ class ListingsController extends Controller
         $listings = $preview->getNotes();
         */
         $listings = [
-            new Listing("IMAGE1", "COMP1234", 40, "Java 1"),
-            new Listing("IMAGE2", "COMP1111", 60, "Web Dev"),
-            new Listing("IMAGE3", "COMP3131", 30, "Algorithms"),
-            new Listing("IMAGE4", "COMP9876", 125, "Business Law")
+            new Listing("COMP1234", 40, "Java 1", "/images/image1.png"),
+            new Listing("COMP1111", 60, "Web Dev", "/images/image2.png"),
+            new Listing("COMP3131", 30, "Algorithms", "/images/image3.png"),
+            new Listing("COMP9876", 125, "Business Law", "/images/image4.png")
         ];
         return view('listings', compact('listings'));
     }

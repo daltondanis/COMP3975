@@ -5,17 +5,17 @@ namespace App;
 
 class Listing
 {
-    private $image;
     private $courseId;
     private $price;
     private $courseName;
+    private $image;
 
-    public function __construct($image, $crsId, $price, $crsName)
+    public function __construct($crsId, $price, $crsName, $image = null)
     {
-        $this->image       = $image;
         $this->courseId    = $crsId;
         $this->price       = $price;
         $this->courseName  = $crsName;
+        $this->image       = $image;
     }
 
     public function __get($property)
@@ -28,4 +28,10 @@ class Listing
         $this->$property = $value;
     }
 
+    public function hasImage() {
+        if ($this->image === null) {
+            return false;
+        }
+        return true;
+    }
 }
