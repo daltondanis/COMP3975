@@ -1,9 +1,40 @@
-td {
-    vertical-align: top;
+@font-face {
+    font-family: Macondo Grotesk;
+    src:url('../font/Macondo_Grotesk.ttf');
 }
-table {
-    width: 100%;
+
+@font-face {
+    font-family: Bebas Neue;
+    src:url('../font/BebasNeue.otf');
 }
+
+@font-face {
+    font-family: Blanch Condensed;
+    src:url('../font/BLANCH_CAPS_LIGHT.otf');
+}
+
+.container{
+    height: 100%;
+}
+
+.thumb {
+    padding-top: 2%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-family: Blanch Condensed;
+    font-size: 220%;
+    line-height: 0.7;
+}
+
+.thumb  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 img.note {
     max-width: 200px;
     max-height: 200px;

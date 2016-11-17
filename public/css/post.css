@@ -22,15 +22,16 @@ body{
 
 .container{
     background-color: #fafafa;
-    max-width: 850px;
-    padding-top: 30px;
-    position: absolute;
+    max-width: 65%;
+    height: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     font-family: Arial;
-    height: auto;
 }
 
 .header{
@@ -55,6 +56,11 @@ body{
 .headerLink:hover{
     color: #f0ad4e;
     text-decoration: none;
+}
+
+.dropdown, .logoutDropDown{
+    font-family: Bebas Neue;
+    font-size: 150%;
 }
 
 .brand{
@@ -91,8 +97,6 @@ body{
     margin-right: auto;
     height: auto;
 }
-
-
 
 .login-title{
     font-weight: bold;
@@ -270,5 +274,3 @@ label.teacher{
     height: 46px;
 
 }
-
-

@@ -11,26 +11,23 @@ function putListing($listing)
 {
     echo
     '
-    <td>
-        <img src="' . URL::to('/') . $listing->image . '" alt="No image" class="note">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 thumb">
+        <img src="' . URL::to('/') . $listing->image . '" alt="No image" class="note img-responsive">
         <p>' . $listing->courseId . ' - $' . $listing->price . '</p>
         <p>' . $listing->courseName . '</p>
-    </td>
+    </div>
     ';
 }
 
 @endphp
 
-@section('content')
-    @foreach ($listings as $key => $listing)
-        @if ($key % 3 == 0)
-            <tr>
+<link href="/css/listings.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        @section('content')
+            @foreach ($listings as $key => $listing)
                 {{ putlisting($listing) }}
-        @elseif ($key % 3 == 2)
-                {{ putListing($listing) }}
-            </tr>
-        @else
-            {{ putListing($listing) }}
-        @endif
-    @endforeach
-@endsection
+            @endforeach
+        @endsection
+        </div>
+</div>
