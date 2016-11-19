@@ -97,7 +97,6 @@ body{
 .loginPanel{
     background-image: url('../images/background-login.png');
     background-size: cover;
-    background-color: #424548;
     color:white;
     max-width: 350px;
     margin-left: auto;
@@ -157,3 +156,6 @@ body{
     width: 250px;
 }
 
+.help-block{
+    color:#ff0000;
+}

@@ -34,8 +34,17 @@
     margin-left: auto;
     margin-right: auto;
 }
-
+/*
 img.note {
     max-width: 200px;
     max-height: 200px;
+}
+*/
+
+.searchBar{
+    background-color: #414548;
+}
+
+.searchLabel{
+    color: #ffffff;
 }

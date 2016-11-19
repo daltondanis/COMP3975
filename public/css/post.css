@@ -58,9 +58,14 @@ body{
     text-decoration: none;
 }
 
-.dropdown, .logoutDropDown{
+.dropdown{
     font-family: Bebas Neue;
     font-size: 150%;
+}
+
+.logoutDropDown{
+    font-family: Bebas Neue;
+    font-size: 130%;
 }
 
 .brand{
