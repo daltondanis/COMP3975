@@ -175,7 +175,6 @@ table.post_table {
     height: auto;
     background-color: white;
     text-align: center;
-    left: 1%;
     margin-top: 3%;
 }
 
@@ -185,12 +184,13 @@ table.note_info {
     width:100%;
     color: black;
     text-align: left;
+	border-style:hidden;
     margin-left: 3%;
 }
 
 .input_title{
     color: black;
-    width: 400px;
+    width: 300px;
     font-size: 130%;
 }
 
@@ -221,8 +221,16 @@ label.small2{
 
 input.small{
     color: black;
-    width: 120px;
     font-size: 130%;
+}
+
+select.t{
+    color: black;
+    font-size: 130%;
+}
+
+.options{
+    width: 170px;
 }
 
 label.teacher{
@@ -234,8 +242,8 @@ label.teacher{
 
 .input_description{
     color: black;
-    width: 95%;
-    height: 100px;
+    width: 80%;
+    height: 130px;
     font-size: 130%;
 }
 
@@ -272,19 +280,10 @@ label.teacher{
     height: 46px;
 }
 
-.gap{
-    height: 20px;
-}
-
-.upload{
-
-}
-
 .inputfile {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
-
     position: absolute;
     z-index: -1;
 }

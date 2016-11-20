@@ -1,61 +1,67 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .table {
+            max-width: 90%;
+            table-layout: fixed;
+            border: hidden;
+        }
+    </style>
     <div class="content">
         <form method="POST" enctype="multipart/form-data">
                 <div class="description">
-                    <table class = "note_info">
+                    <table class = "table note_info table-responsive">
                         <tr class ="normal_tr_height">
-                            <td colspan="2">
-                                <label class="small">Title: </label>
-                                <input class="input_title" type = "text" name = "title">
-                            </td>
-                            <td>
-                                <input type="file" name="myImage" id="file" class="inputfile" />
-                                <label for="file" class="small2">upload</label>
-                                <input type="text" name="fileName" value="" class="myinput filename" readonly>
-                            </td>
+                        <td colspan="2">
+                            <label class="small">Title: </label>
+                            <input class="form-control" type = "text" name = "title">
+                        </td>
+                        <td>
+                            <input type="file" name="myImage" id="file" class="inputfile" />
+                            <label for="file" class="small2">upload</label>
+                            <input type="text" name="fileName" value="" class="myinput form-control filename" readonly>
+                        </td>
                         </tr>
                         <tr class ="normal_tr_height">
                             <td class="first">
                                 <label class="small">school: </label>
-                                <select name="schools">
+                                <select class="form-control t" name="schools">
                                     @foreach($schools as $key => $school)
-                                        <option value="{{$key}}">{{$school}}</option>
+                                        <option class="options" value="{{$key}}">{{$school}}</option>
                                     @endforeach
                                 </select><br>
                             </td>
                             <td>
-                                <label class="teacher">subject: </label>
-                                <input class="small" type = "text" name = "subject">
+                                <label class="small">subject: </label>
+                                <input class="small form-control " type = "text" name = "subject">
                             </td>
                             <td>
                                 <label class="small">course: </label>
-                                <input class="small" type = "text" name = "course">
+                                <input class="small form-control" type = "text" name = "course">
                             </td>
                         </tr>
                         <tr class ="normal_tr_height">
                             <td class="first">
                                 <label class="small">year: </label>
-                                <input class="small" type = "text" name = "year">
+                                <input class="small form-control" type = "text" name = "">
                             </td>
                             <td>
-                                <label class="teacher">instructor: </label>
-                                <input class="small" type = "text" name = "instructor">
+                                <label class="small">instructor: </label>
+                                <input class="small form-control" type = "text" name = "">
                             </td>
                             <td>
                                 <label class="small">price: </label>
-                                <input class="small" type = "text" name = "price">
+                                <input class="small form-control" type = "text" name = "">
                             </td>
                         </tr>
                         <tr class="large_tr_height">
                             <td colspan="3">
                                 <label class="title">Description: </label><br>
-                                <textarea class="input_description" name = "description"></textarea>
+                                <textarea class="input_description form-control" name = "description"></textarea>
                             </td>
                         </tr>
                     </table>
-                    <div class="gap"></div>
                 </div>
 
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -66,7 +72,5 @@
                     <input class="submit" type="submit" name="submit" value=" ">
                 </div>
             </form>
-
-
     </div>
 @endsection
