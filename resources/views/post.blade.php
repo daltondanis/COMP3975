@@ -63,7 +63,7 @@
 
                 <div class = "button">
                     <a href="#"><img class="back"></a>
-                    <input class="submit" type="submit" name="submit" value="Post">
+                    <input class="submit" type="submit" name="submit" value=" ">
                 </div>
             </form>
 
