@@ -149,30 +149,6 @@ body{
     font-size: 120%;
 }
 
-label.email{
-    color: #424548;
-    font-family: Bebas Neue;
-    font-size: 140%;
-    width: 60px;
-}
-
-label.phone{
-    color: #424548;
-    font-family: Bebas Neue;
-    font-size: 140%;
-    width: 120px;
-}
-
-.info{
-    position: relative;
-    width: 98%;
-    display:inline-block;
-    border: 5px solid rgba(150, 146, 148, 0.44);
-    height: 80px;
-    background-color: white;
-    text-align: center;
-    left: 1%;
-}
 
 table.post_table {
     position: relative;
@@ -207,7 +183,6 @@ table.note_info {
 .input_title{
     color: black;
     width: 400px;
-    margin-left: 1%;
     font-size: 130%;
 }
 
@@ -216,19 +191,29 @@ label.title{
     font-family: Bebas Neue;
     font-size: 140%;
     width: 50px;
+    height: 40px;
 }
+
+
 
 label.small{
     color: #424548;
     font-family: Bebas Neue;
-    font-size: 140%;
+    font-size: 150%;
     width: 60px;
+}
+
+label.small2{
+    color: #424548;
+    font-family: Bebas Neue;
+    font-size: 150%;
+    width: 60px;
+    border: 1px solid rgba(150, 146, 148, 0.44);
 }
 
 input.small{
     color: black;
-    width: 130px;
-    margin-left: 1%;
+    width: 120px;
     font-size: 130%;
 }
 
@@ -236,18 +221,18 @@ label.teacher{
     color: #424548;
     font-family: Bebas Neue;
     font-size: 140%;
-    width: 80px;
+    width: 90px;
 }
 
 .input_description{
     color: black;
-    width: 734px;
+    width: 95%;
     height: 100px;
     font-size: 130%;
 }
 
 .normal_tr_height {
-    height: 45px;
+    height: 48px;
 }
 
 .large_tr_height {
@@ -277,5 +262,42 @@ label.teacher{
     background-image: url("../images/submit.png");
     width:100px;
     height: 46px;
+}
+
+.gap{
+    height: 20px;
+}
+
+.upload{
 
 }
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    color: #424548;
+    font-family: Bebas Neue;
+    font-size: 150%;
+    display: inline-block;
+    cursor: pointer;
+    border-color: darkblue;
+    border: 2px;
+}
+
+.filename{
+    color: black;
+    width: 120px;
+    font-size: 130%;
+    left: 5%;
+}
+
+
+
+

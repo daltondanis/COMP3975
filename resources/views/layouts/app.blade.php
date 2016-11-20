@@ -73,5 +73,17 @@
 
 <!-- Scripts -->
 <script src="/js/app.js"></script>
+<script>
+    $('.inputfile').change(function(){
+        var filePath=$(this).val();
+        var fileName="";
+        if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
+            // $(".fileerrorTip").html("").hide();
+            var arr=filePath.split('\\');
+            fileName=arr[arr.length-1];
+        }
+        $('.myinput').val(fileName);
+    })
+</script>
 </body>
 </html>
