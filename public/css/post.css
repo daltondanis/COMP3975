@@ -202,7 +202,11 @@ label.title{
     height: 40px;
 }
 
-
+.uploadbutton{
+	border: 3px solid rgba(26, 26, 189, 0.72);
+	width:70px;
+	height:35px;
+}
 
 label.small{
     color: #424548;
@@ -216,7 +220,7 @@ label.small2{
     font-family: Bebas Neue;
     font-size: 150%;
     width: 60px;
-    border: 1px solid rgba(150, 146, 148, 0.44);
+	padding-left: 12%;
 }
 
 input.small{

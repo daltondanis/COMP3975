@@ -18,8 +18,10 @@
                             <input class="form-control" type = "text" name = "title">
                         </td>
                         <td>
-                            <input type="file" name="myImage" id="file" class="inputfile" />
-                            <label for="file" class="small2">upload</label>
+							<div class="uploadbutton">
+								<input type="file" name="myImage" id="file" class="inputfile" />
+								<label for="file" class="small2">upload</label>
+							</div>
                             <input type="text" name="fileName" value="" class="myinput form-control filename" readonly>
                         </td>
                         </tr>
@@ -44,15 +46,15 @@
                         <tr class ="normal_tr_height">
                             <td class="first">
                                 <label class="small">year: </label>
-                                <input class="small form-control" type = "text" name = "">
+                                <input class="small form-control" type = "number" name = "year">
                             </td>
                             <td>
                                 <label class="small">instructor: </label>
-                                <input class="small form-control" type = "text" name = "">
+                                <input class="small form-control" type = "text" name = "instructor">
                             </td>
                             <td>
                                 <label class="small">price: </label>
-                                <input class="small form-control" type = "text" name = "">
+                                <input class="small form-control" type = "number" name = "price">
                             </td>
                         </tr>
                         <tr class="large_tr_height">
