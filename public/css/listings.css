@@ -43,6 +43,9 @@ img.note {
 
 .searchBar{
     background-color: #414548;
+    padding-top: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .searchLabel{

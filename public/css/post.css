@@ -58,9 +58,17 @@ body{
     text-decoration: none;
 }
 
+.username, .caret{
+    color: #f4d03f;
+}
+
 .dropdown{
     font-family: Bebas Neue;
     font-size: 150%;
+}
+
+.dropdownList{
+    width: 100%;
 }
 
 .logoutDropDown{

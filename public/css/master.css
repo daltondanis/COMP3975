@@ -156,6 +156,6 @@ body{
     width: 250px;
 }
 
-.help-block{
-    color:#ff0000;
+.errorMessage{
+    color:#f22613;
 }
