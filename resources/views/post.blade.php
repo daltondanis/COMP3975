@@ -46,7 +46,7 @@
                         <tr class ="normal_tr_height">
                             <td class="first">
                                 <label class="small">year: </label>
-                                <input class="small form-control" type = "number" name = "year">
+                                <input class="small form-control" type = "number" name = "yearTaken">
                             </td>
                             <td>
                                 <label class="small">instructor: </label>
@@ -58,9 +58,13 @@
                             </td>
                         </tr>
                         <tr class="large_tr_height">
-                            <td colspan="3">
+                            <td colspan="2">
                                 <label class="title">Description: </label><br>
                                 <textarea class="input_description form-control" name = "description"></textarea>
+                            </td>
+                            <td colspan="1">
+                            <label class="small">program: </label>
+                            <input class="small form-control" type = "text" name = "program">
                             </td>
                         </tr>
                     </table>
