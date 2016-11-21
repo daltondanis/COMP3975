@@ -19,7 +19,7 @@ Route::group(array('before' => 'auth'), function(){
 
 Auth::routes();
 
-Route::get('/schools', 'SchoolController@create');
+Route::get('/testdata', 'TestDataController@create');
 
 Route::get('/home', 'ListingsController@listings');
 Route::get('/', 'ListingsController@listings');

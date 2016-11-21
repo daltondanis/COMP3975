@@ -35,10 +35,6 @@
                                 </select><br>
                             </td>
                             <td>
-                                <label class="small">subject: </label>
-                                <input class="small form-control " type = "text" name = "subject">
-                            </td>
-                            <td>
                                 <label class="small">course: </label>
                                 <input class="small form-control" type = "text" name = "course">
                             </td>
@@ -46,7 +42,7 @@
                         <tr class ="normal_tr_height">
                             <td class="first">
                                 <label class="small">year: </label>
-                                <input class="small form-control" type = "number" name = "yearTaken">
+                                <input class="small form-control" type = "number" value="2016" name = "yearTaken">
                             </td>
                             <td>
                                 <label class="small">instructor: </label>
