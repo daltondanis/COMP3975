@@ -28,7 +28,6 @@ class ListingsController extends Controller
 
     public function search(Request $request)
     {
-        
         $preview  = new NotePreview();
         $notes = $preview->getNotes();
         
@@ -41,7 +40,6 @@ class ListingsController extends Controller
 
             if (!empty($request->course) &&
                 strlen(stristr($note->courseId, str_replace(' ', '', $request->course))) > 0)
-            
             {
                 $valid = true;
             }

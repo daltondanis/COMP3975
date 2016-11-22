@@ -62,7 +62,7 @@ class NotePreview
         {
             $notes = DB::table('notes')->where('price', '>=', $minval)->get();
         }
-        
+
         return $notes;
     }
     /*
