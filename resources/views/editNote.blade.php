@@ -25,7 +25,18 @@
             <input type="text" name="fileName" value="{{$imagePath}}" class="myinput form-control filename" readonly>
 
         School
-        <input id="schoolName" value="{{$schoolName}}" />
+            <label class="small">school: </label>
+            <select class="form-control t" name="schools" value="{{$schoolName}}">
+                {{--<option selected ="{{$schoolName}}"></option>--}}
+                @foreach($schools as $key => $school)
+                    @if ($school == $schoolName)
+                        <option class="options"  value="{{$key}}" selected>{{$school}}</option>
+                    @else
+                        <option class="options" value="{{$key}}">{{$school}}</option>
+                    @endif
+                    {{--<option class="options" value="{{$key}}">{{$school}}</option>--}}
+                @endforeach
+            </select><br>
 
         Year
         <input id="year" value="{{$year}}" />
