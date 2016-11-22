@@ -19,8 +19,9 @@ class NotePreview
             $courseID = $note->courseName;
             $courseName = $note->title;
             $price = $note->price;
+            $noteId = $note->id;
             //$username = $user->username;
-            $listing = new Listing($courseID, $price, $courseName, $img);
+            $listing = new Listing($courseID, $price, $courseName, $img, $noteId);
             $listings[] = $listing;
         }
         return $listings;

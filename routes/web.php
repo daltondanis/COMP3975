@@ -32,6 +32,8 @@ Route::post('/post', 'PostController@store');
 
 
 
-Route::get('/note', 'NoteController@display');
+//Route::get('/note', 'NoteController@display');
+Route::get('/note/{note}', 'NoteController@display');
+
 Route::get('/editNote', 'NoteController@edit');
 Route::post('/editNote', 'NoteController@update');

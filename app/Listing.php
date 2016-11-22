@@ -9,13 +9,15 @@ class Listing
     private $price;
     private $courseName;
     private $image;
+    private $noteId;
 
-    public function __construct($crsId, $price, $crsName, $image = null)
+    public function __construct($crsId, $price, $crsName, $image, $noteId = null)
     {
         $this->courseId    = $crsId;
         $this->price       = $price;
         $this->courseName  = $crsName;
         $this->image       = $image;
+        $this->noteId      = $noteId;
     }
 
     public function __get($property)
