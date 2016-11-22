@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Listing;
 use App\NotePreview;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class ListingsController extends Controller
 {
@@ -15,7 +16,6 @@ class ListingsController extends Controller
      */
     public function listings()
     {
-
         // Grabs from database
         $preview  = new NotePreview();
 
