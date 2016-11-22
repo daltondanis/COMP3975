@@ -25,4 +25,17 @@ class ListingsController extends Controller
 
         return view('listings', compact('listings', 'schools'));
     }
+
+    public function search(Request $request)
+    {
+        $preview = new NotePreview();
+
+        $notes = $preview->getNotesByCourse($request->course);
+
+        foreach ($notes as $note) {
+            echo $note . "<br>";
+        }
+
+        //return back();
+    }
 }
