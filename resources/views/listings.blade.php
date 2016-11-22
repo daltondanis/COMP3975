@@ -15,8 +15,8 @@
                         <div class="form-group">
                             <label class="searchLabel">SCHOOL</label><br/>
                             <select class="form-control t" name="schools">
-                                @foreach($schools as $key => $school)
-                                    <option class="options" value="{{$key}}">{{$school}}</option>
+                                @foreach ($schools as $key => $school)
+                                    <option class="options" value="{{ $key }}">{{ $school }}</option>
                                 @endforeach
                             </select><br>
                         </div>
@@ -56,7 +56,7 @@
                 @foreach ($listings as $key => $listing)
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumb">
                         <img src="{{ URL::to('/') . $listing->image }}" alt="No image" class="img-responsive">
-                        <p>{{ $listing->courseId }} - {{ $listing->price }}</p>
+                        <p>{{ $listing->courseId }} - ${{ $listing->price }}</p>
                         <p>{{ $listing->courseName }}</p>
                     </div>
                 @endforeach

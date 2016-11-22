@@ -49,14 +49,20 @@ class NotePreview
     { //give -1 as arguments if you don't want to specify a min or max specifically
         $minval = 0;
         $notes;
-        if($min != -1){
+        if ($min != -1)
+        {
             $minval = $min;
         }
-        if($max != -1){
+
+        if ($max != -1)
+        {
             $notes = DB::table('notes')->where('price', '>=', $minval)->where('price', '<=', $max)->get();
-        }else{
+        } 
+        else
+        {
             $notes = DB::table('notes')->where('price', '>=', $minval)->get();
         }
+        
         return $notes;
     }
     /*
