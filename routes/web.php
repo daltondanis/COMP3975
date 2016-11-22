@@ -21,6 +21,9 @@ Route::get('/testdata', 'TestDataController@create');
 
 Route::get('/home', 'ListingsController@listings');
 Route::get('/', 'ListingsController@listings');
+Route::post('/home', 'ListingsController@search');
+Route::post('/', 'ListingsController@search');
+
 
 Route::get('/post', 'PostController@create');
 Route::post('/post', 'PostController@store');
