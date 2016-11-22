@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Listing;
 use App\NotePreview;
+use Illuminate\Support\Facades\DB;
 
 class ListingsController extends Controller
 {
@@ -20,6 +21,8 @@ class ListingsController extends Controller
 
         $listings = $preview->getNotes();
 
-        return view('listings', compact('listings'));
+        $schools = DB::table('schools')->orderBy('name', 'asc')->pluck('name','id');
+
+        return view('listings', compact('listings', 'schools'));
     }
 }
