@@ -13,18 +13,15 @@ class NoteController extends Controller
 {
     //thi
 
-    public function display($note)
-    {
+    public function display($note) {
         $note = DB::table('notes')->where('id',$note)->first();
 
         $title = $note->title;
         $course = $note->courseName;
 
-
         $schoolId = $note->school_id;
         $school = DB::table('schools')->where('id', $schoolId)->first();
         $schoolName = $school->name;
-
 
         $year = $note->yearTaken;
         $instructor = $note->teacher;
@@ -38,14 +35,17 @@ class NoteController extends Controller
 
         $email = $user->email;
 
-
         return view('note', compact('title', 'imagePath', 'course', 'schoolName', 'year', 'instructor', 'description', 'email', 'price'));
     }
-    public function edit($note)
-    {
+
+    public function edit($note) {
         $note = DB::table('notes')->where('id',$note)->first();
 
+        $noteId = $note->id;
+
         $user_id = \Auth::user()->id;
+
+        //do not allow a user to edit notes if they do not own them
         if ($note->user_id != $user_id) {
             return back();
         }
@@ -63,7 +63,6 @@ class NoteController extends Controller
         $instructor = $note->teacher;
         $description = $note->description;
         $imagePath = $note->imagePath;
-        //$imagePath = substr($imagePath, 8);
         $price = $note->price;
 
 
@@ -72,18 +71,14 @@ class NoteController extends Controller
 
         $email = $user->email;
         $schools = DB::table('schools')->orderBy('name', 'asc')->pluck('name', 'id');
-        //return view('post', compact('schools'));
 
-        return view('editNote', compact('title', 'course', 'schools', 'imagePath', 'schoolName', 'year', 'instructor', 'description', 'email', 'price'));
+        return view('editNote', compact('title', 'course', 'schools', 'noteId', 'imagePath', 'schoolName', 'year', 'instructor', 'description', 'email', 'price'));
     }
 
-    public function update($note)
-    {
+    public function update($note) {
         $note = DB::table('notes')->where('id',$note)->first();
-        //update values in the database with the input values
 
         $title = Input::get('title');
-//      grabs school id - not school name
         $school_id = Input::get('schools');
         $course = Input::get('course');
         $yearTaken = Input::get('yearTaken');
@@ -96,6 +91,7 @@ class NoteController extends Controller
             $imagePath = Input::get('originalImage');
             $originalFilename = substr($imagePath, 8);
             \File::delete(public_path() .'/images/' . $originalFilename);
+
             $image = Input::file('myImage');
             $destinationPath = public_path() . '/images/';
             $filename = $image->getClientOriginalName();
@@ -119,8 +115,7 @@ class NoteController extends Controller
 
 
             return redirect()->action('ListingsController@listings');
-        }
-        else {
+        } else {
             DB::table('notes')->where('id',$note->id)->limit(1)->update(
                 [
                     'title' => $title,
@@ -138,10 +133,7 @@ class NoteController extends Controller
 
     }
 
-
-
-    function makeUniqueName($full_path)
-    {
+    function makeUniqueName($full_path) {
         $file_name = basename($full_path);
         $directory = dirname($full_path) . DIRECTORY_SEPARATOR;
 
@@ -161,13 +153,16 @@ class NoteController extends Controller
         return $file_name;
     }
 
+    function delete($note) {
+        $note = DB::table('notes')->where('id',$note)->first();
 
+        $imagePath = $note->imagePath;
+        $originalFilename = substr($imagePath, 8);
+        \File::delete(public_path() . '/images/' . $originalFilename);
 
+        DB::table('notes')->where('id', $note->id)->limit(1)->delete();
 
-
-    function Delete()
-    {
-
+        return redirect()->action('ListingsController@userListings');
     }
 
 }

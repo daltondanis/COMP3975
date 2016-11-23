@@ -8,7 +8,6 @@
             border: hidden;
         }
     </style>
-    {{--'title', 'imagePath', 'course', 'school', 'year', 'instructor', 'description', 'email', 'price'--}}
     <div class="content">
         <h1 id="title">{{$title}}</h1>
         <p id="course">Course: {{$course}}</p>

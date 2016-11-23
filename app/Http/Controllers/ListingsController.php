@@ -14,24 +14,27 @@ class ListingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function listings()
-    {
-        // Grabs from database
+    public function listings() {
         $preview  = new NotePreview();
 
         $listings = $preview->getNotes();
 
         $schools = DB::table('schools')->orderBy('name', 'asc')->pluck('name','id');
 
-        return view('listings', compact('listings', 'schools'));
+        $searchData = [
+            'school'   => 0,
+            'course'   => '',
+            'program'  => '',
+            'minPrice' => '',
+            'maxPrice' => ''
+        ];
+
+        return view('listings', compact('listings', 'schools', 'searchData'));
     }
 
-    public function userListings()
-    {
-        //get user id
+    public function userListings() {
         $user_id  =  \Auth::user()->id;
 
-        // Grabs from database
         $preview  = new NotePreview();
 
         $listings = $preview->getNotesByUser($user_id);
@@ -39,8 +42,7 @@ class ListingsController extends Controller
         return view('myListings', compact('listings'));
     }
 
-    public function search(Request $request)
-    {
+    public function search(Request $request) {
         $preview  = new NotePreview();
 
         $listings = $preview->getNotesBySearch($request->schools, $request->course, $request->program,
@@ -48,6 +50,14 @@ class ListingsController extends Controller
 
         $schools = DB::table('schools')->orderBy('name', 'asc')->pluck('name','id');
 
-        return view('listings', compact('listings', 'schools'));
+        $searchData = [
+            'school'   => $request->schools,
+            'course'   => $request->course,
+            'program'  => $request->program,
+            'minPrice' => $request->minPrice,
+            'maxPrice' => $request->maxPrice
+        ];
+
+        return view('listings', compact('listings', 'schools', 'searchData'));
     }
 }

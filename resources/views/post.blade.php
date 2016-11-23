@@ -70,7 +70,7 @@
                 <input type="hidden" name="user" value=" {{ \Auth::user()->id }}">
 
                 <div class = "button">
-                    <a href="#"><img class="back"></a>
+                    <input type="reset" value="Reset">
                     <input class="submit" type="submit" name="submit" value=" ">
                 </div>
             </form>

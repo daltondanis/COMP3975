@@ -11,8 +11,7 @@ class Listing
     private $image;
     private $noteId;
 
-    public function __construct($crsId, $price, $crsName, $image, $noteId = null)
-    {
+    public function __construct($crsId, $price, $crsName, $image, $noteId = null) {
         $this->courseId    = $crsId;
         $this->price       = $price;
         $this->courseName  = $crsName;
@@ -20,13 +19,11 @@ class Listing
         $this->noteId      = $noteId;
     }
 
-    public function __get($property)
-    {
+    public function __get($property) {
         return $this->$property;
     }
 
-    public function __set($property, $value)
-    {
+    public function __set($property, $value) {
         $this->$property = $value;
     }
 
