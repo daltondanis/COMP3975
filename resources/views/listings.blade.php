@@ -58,7 +58,7 @@
                                 SEARCH
                             </button>
                             <a href="">
-                                CANCEL
+                                CLEAR
                             </a>
                         </div>
                     </form>
