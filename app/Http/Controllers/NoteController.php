@@ -45,6 +45,11 @@ class NoteController extends Controller
     {
         $note = DB::table('notes')->where('id',$note)->first();
 
+        $user_id = \Auth::user()->id;
+        if ($note->user_id != $user_id) {
+            return back();
+        }
+
         $title = $note->title;
         $course = $note->courseName;
 

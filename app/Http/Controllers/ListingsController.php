@@ -42,54 +42,9 @@ class ListingsController extends Controller
     public function search(Request $request)
     {
         $preview  = new NotePreview();
-        $notes = $preview->getNotes();
-        
-        $listings = array();
 
-        foreach ($notes as $note) 
-        {
-
-            $valid = false;
-
-            if (!empty($request->course) &&
-                strlen(stristr($note->courseId, str_replace(' ', '', $request->course))) > 0)
-            {
-                $valid = true;
-            }
-            else if (!empty($request->program) &&
-                strlen(stristr($note->courseName, str_replace(' ', '', $request->program))) > 0)
-            {
-                $valid = true;
-            }
-
-            if (!empty($request->minPrice))
-            {
-                if ($note->price > $request->minPrice)
-                {
-                    $valid = true;
-                }
-                else
-                {
-                    $valid = false;
-                }
-            }
-            if (!empty($request->maxPrice))
-            {
-                if ($note->price < $request->maxPrice)
-                {
-                    $valid = true;
-                }
-                else
-                {
-                    $valid = false;
-                }
-            }
-
-            if ($valid)
-            {
-                $listings[] = $note;
-            }
-        }
+        $listings = $preview->getNotesBySearch($request->schools, $request->course, $request->program,
+            $request->minPrice, $request->maxPrice);
 
         $schools = DB::table('schools')->orderBy('name', 'asc')->pluck('name','id');
 
