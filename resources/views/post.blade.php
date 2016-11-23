@@ -19,7 +19,7 @@
                         </td>
                         <td>
 							<div class="uploadbutton">
-								<input type="file" name="myImage" id="file" class="inputfile" />
+								<input type="file" name="myImage" id="file" class="inputfile" required />
 								<label for="file" class="small2">upload</label>
 							</div>
                             <input type="text" name="fileName" value="" class="myinput form-control filename" readonly>
@@ -70,7 +70,7 @@
                 <input type="hidden" name="user" value=" {{ \Auth::user()->id }}">
 
                 <div class = "button">
-                    <a href="#"><img class="back"></a>
+                    <input type="reset" value="Reset">
                     <input class="submit" type="submit" name="submit" value=" ">
                 </div>
             </form>

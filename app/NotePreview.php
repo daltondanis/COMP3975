@@ -12,29 +12,80 @@ class NotePreview
         $listings = array();
         $notes = DB::table('notes')->get();
 
-        foreach ($notes as $note)
-        {
-            //$user = DB::table('users')->where('id', $note->user_id)->first();
+        foreach ($notes as $note) {
             $img = $note->imagePath;
             $courseID = $note->courseName;
             $courseName = $note->title;
             $price = $note->price;
-            //$username = $user->username;
-            $listing = new Listing($courseID, $price, $courseName, $img);
+            $noteId = $note->id;
+            $listing = new Listing($courseID, $price, $courseName, $img, $noteId);
             $listings[] = $listing;
         }
         return $listings;
     }
 
-    public function getUsername($note)
+    public function getNotesByUser($user_id)
     {
-        $user = DB::table('users')->where('id', $note->user_id)->first();
-        return $user->username;
+
+        $listings = array();
+        $notes = DB::table('notes')->get();
+
+        foreach ($notes as $note) {
+            if($note->user_id == $user_id) {
+                $img = $note->imagePath;
+                $courseID = $note->courseName;
+                $courseName = $note->title;
+                $price = $note->price;
+                $noteId = $note->id;
+                $listing = new Listing($courseID, $price, $courseName, $img, $noteId);
+                $listings[] = $listing;
+            }
+        }
+        return $listings;
     }
 
-    public function getNoteImage($note)
-    {
-        $img = DB::table('photos')->where('note_id', $note->id)->first();
-        return $img->path;
+    public function getNotesBySearch($school, $course, $program, $minprice, $maxprice){
+
+        $notes = DB::table('notes');
+
+        if(!empty($school)){
+            $schoolQuery = DB::table('schools')->where('id', '=', $school)->first();
+            $notes = $notes->where('school_id', '=', $schoolQuery->id);
+        }
+
+        if(!empty($course)){
+            $notes = $notes->where('courseName', 'LIKE', '%' . $course . '%');
+        }
+
+        if(!empty($program)){
+            $notes = $notes->where('program', 'LIKE', '%' . $program . '%');
+        }
+
+        $minval = 0;
+        if (!empty($minprice)) {
+            $minval = $minprice;
+        }
+
+        if (!empty($maxprice)) {
+            $notes = $notes->where('price', '>=', $minval)->where('price', '<=', $maxprice)->get();
+        } else {
+            $notes = $notes->where('price', '>=', $minval)->get();
+        }
+
+        $listings = array();
+        foreach ($notes as $note)
+        {
+            $img = $note->imagePath;
+            $courseID = $note->courseName;
+            $courseName = $note->title;
+            $price = $note->price;
+            $noteId = $note->id;
+            $listing = new Listing($courseID, $price, $courseName, $img, $noteId);
+            $listings[] = $listing;
+        }
+
+        return $listings;
+
     }
+
 }

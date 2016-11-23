@@ -20,14 +20,14 @@ class CreateNotesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('school_id')->unsigned();
             $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
-            $table->timestamps();
             $table->string('courseName');
             $table->string('program');
             $table->integer('yearTaken')->unsigned();
             $table->string('teacher');
-            $table->string('imagePath')->nullable();
+            $table->string('imagePath');
             $table->float('price', 8, 2);
             $table->text('description');
+            $table->timestamps();
         });
     }
 

@@ -16,17 +16,10 @@ class PostController extends Controller
         return view('post', compact('schools'));
     }
 
-    public function store()
-    {
+    public function store() {
         $user_id  = Input::get('user');
 
-        //hard coding user id for now - will change later when bug is fixed
-        //$user_id = 1;
-
-
-
         $title    = Input::get('title');
-//        grabs school id - not school name
         $school_id   = Input::get('schools');
         $program   = Input::get('program');
         $course   = Input::get('course');
@@ -34,22 +27,15 @@ class PostController extends Controller
         $instructor   = Input::get('instructor');
         $description   = Input::get('description');
         $price   = Input::get('price');
-
-
         $image = Input::file('myImage');
 
 
         $destinationPath = public_path(). '/images/';
         $filename = $image->getClientOriginalName();
         $filename = $this->makeUniqueName($destinationPath . $filename);
-
-
         $filepath = '/images/'.$filename;
 
-
         $image->move($destinationPath, $filename);
-
-
 
         DB::table('notes')->insert(
             ['user_id' => $user_id,
@@ -60,11 +46,10 @@ class PostController extends Controller
              'yearTaken' => $yearTaken,
              'teacher' => $instructor,
              'description' => $description,
-                'imagePath' => $filepath,
-                'price' => $price,
-                'created_at'=>new \DateTime(),
-                'updated_at'=>new \DateTime()]);
-
+             'imagePath' => $filepath,
+             'price' => $price,
+             'created_at'=>new \DateTime(),
+             'updated_at'=>new \DateTime()]);
 
         return redirect()->action('ListingsController@listings');
     }

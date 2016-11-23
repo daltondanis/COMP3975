@@ -11,19 +11,35 @@
 |
 */
 
+//checking if user is logged in
 Route::group(array('before' => 'auth'), function(){
-    // your routes
-
     Route::get('/', 'HomeController@index');
 });
 
 Auth::routes();
 
+//test data - to be removed when put on live server
 Route::get('/testdata', 'TestDataController@create');
 
+//browse/home page and handling search requests
 Route::get('/home', 'ListingsController@listings');
 Route::get('/', 'ListingsController@listings');
+Route::post('/home', 'ListingsController@search');
+Route::post('/', 'ListingsController@search');
 
+//post a note page
 Route::get('/post', 'PostController@create');
 Route::post('/post', 'PostController@store');
 
+//my listings page
+Route::get('/myListings', 'ListingsController@userListings');
+
+//details note page
+Route::get('/note/{note}', 'NoteController@display');
+
+//edit a note page
+Route::get('/editNote/{note}', 'NoteController@edit');
+Route::post('/editNote/{note}', 'NoteController@update');
+
+//deleting a note from edit a note page
+Route::post('/editNote/{note}/delete', 'NoteController@delete');

@@ -14,6 +14,7 @@ class TestDataController extends Controller
             ['name' => 'University of British Columbia'],
             ['name' => 'Langara College'],
             ['name' => 'Simon Fraser University'],
+            ['name' => 'British Columbia Institute of Technology'],
             ['name' => 'Vancouver Community College'],
             ['name' => 'Kwantlen Polytechnic University'],
             ['name' => 'The Art Institute of Vancouver'],
@@ -59,7 +60,7 @@ DB::table('users')->insert([
         //notes test data -------------------------------------------------------
         DB::table('notes')->insert(['user_id' => 1,
             'title' => 'Notes for Web and Mobile',
-            'school_id' => '5', 'program' => 'CST',
+            'school_id' => '1', 'program' => 'CST',
             'courseName' => 'COMP3975',
             'yearTaken' => 2016,
             'teacher' => 'Jason Harrison',
@@ -71,7 +72,7 @@ DB::table('users')->insert([
 
         DB::table('notes')->insert(['user_id' => 2,
             'title' => 'COMP 3512: Object Oriented Prog in C++',
-            'school_id' => '5', 'program' => 'CST',
+            'school_id' => '2', 'program' => 'CST',
             'courseName' => 'COMP3912',
             'yearTaken' => 2016,
             'teacher' => 'Albert Wei',
@@ -84,7 +85,7 @@ DB::table('users')->insert([
 
         DB::table('notes')->insert(['user_id' => 3,
             'title' => 'BCIT - COMP 1510',
-            'school_id' => '5', 'program' => 'CST',
+            'school_id' => '3', 'program' => 'CST',
             'courseName' => 'COMP1510',
             'yearTaken' => 2013,
             'teacher' => 'Bruce Link',
@@ -97,7 +98,7 @@ DB::table('users')->insert([
 
         DB::table('notes')->insert(['user_id' => 2,
             'title' => 'COMP 1536: Intro to Web Development',
-            'school_id' => '5', 'program' => 'CST',
+            'school_id' => '4', 'program' => 'CST',
             'courseName' => 'COMP1536',
             'yearTaken' => 2015,
             'teacher' => 'Medhat Elmasry',
@@ -122,7 +123,7 @@ DB::table('users')->insert([
 
     DB::table('notes')->insert(['user_id' => 4,
     'title' => 'BCIT CST Discrete Mathematics',
-    'school_id' => '5', 'program' => 'CST',
+    'school_id' => '6', 'program' => 'CST',
     'courseName' => 'COMP2121',
     'yearTaken' => 2015,
     'teacher' => 'Goran Ruzic',
@@ -135,7 +136,7 @@ DB::table('users')->insert([
 
     DB::table('notes')->insert(['user_id' => 4,
           'title' => 'BCIT CST Computer Organization/Architec',
-          'school_id' => '5', 'program' => 'CST',
+          'school_id' => '7', 'program' => 'CST',
           'courseName' => 'COMP2721',
           'yearTaken' => 2015,
           'teacher' => 'Jason Harrison',
@@ -147,7 +148,7 @@ DB::table('users')->insert([
 
     DB::table('notes')->insert(['user_id' => 4,
     'title' => 'BCIT CST Intro to Data Communications',
-    'school_id' => '5', 'program' => 'CST',
+    'school_id' => '8', 'program' => 'CST',
     'courseName' => 'COMP3721',
     'yearTaken' => 2015,
     'teacher' => 'Chi En Huang',
@@ -160,7 +161,7 @@ DB::table('users')->insert([
 
     DB::table('notes')->insert(['user_id' => 4,
           'title' => 'BCIT CST Algorithms Analysis and Design',
-          'school_id' => '5', 'program' => 'CST',
+          'school_id' => '9', 'program' => 'CST',
           'courseName' => 'COMP3760',
           'yearTaken' => 2016,
           'teacher' => 'Farnaz Dargahi',
@@ -173,7 +174,7 @@ DB::table('users')->insert([
 
     DB::table('notes')->insert(['user_id' => 5,
     'title' => '!AMAZING! Relational Database Systems !AMAZING!',
-    'school_id' => '5', 'program' => 'CST',
+    'school_id' => '10', 'program' => 'CST',
     'courseName' => 'COMP2714',
     'yearTaken' => 2015,
     'teacher' => 'Keith Tang',
@@ -185,7 +186,7 @@ DB::table('users')->insert([
 
     DB::table('notes')->insert(['user_id' => 5,
           'title' => '!AMAZING! Object Oriented Analysis and Design !AMAZING!',
-          'school_id' => '5', 'program' => 'CST',
+          'school_id' => '11', 'program' => 'CST',
           'courseName' => 'COMP3711',
           'yearTaken' => 2016,
           'teacher' => 'Richard Chau',
