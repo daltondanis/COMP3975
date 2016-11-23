@@ -26,6 +26,19 @@ class ListingsController extends Controller
         return view('listings', compact('listings', 'schools'));
     }
 
+    public function userListings()
+    {
+        //get user id
+        $user_id  =  \Auth::user()->id;
+
+        // Grabs from database
+        $preview  = new NotePreview();
+
+        $listings = $preview->getNotesByUser($user_id);
+
+        return view('myListings', compact('listings'));
+    }
+
     public function search(Request $request)
     {
         $preview  = new NotePreview();

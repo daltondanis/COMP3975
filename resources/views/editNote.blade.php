@@ -11,20 +11,21 @@
     {{--'title', 'imagePath', 'course', 'school', 'year', 'instructor', 'description', 'email', 'price'--}}
     <div class="content">
         <form method="POST" enctype="multipart/form-data">
-        Title
-        <input id="title" value="{{$title}}" />
+            Title
+            <input name ="title" id="title" value="{{$title}}" />
 
-        Course
-        <input id="course" value="{{$course}}" />
+            Course
+            <input name = "course" id="course" value="{{$course}}" />
 
-        Image
+            Image
             <div class="uploadbutton">
                 <input type="file" name="myImage" id="file" class="inputfile" />
                 <label for="file" class="small2">upload</label>
             </div>
-            <input type="text" name="fileName" value="{{$imagePath}}" class="myinput form-control filename" readonly>
+            <input type ="hidden" name="originalImage" value="{{$imagePath}}" />
+            <input type="text" name="fileName" value="Input a file" class="myinput form-control filename" readonly>
 
-        School
+            School
             <label class="small">school: </label>
             <select class="form-control t" name="schools" value="{{$schoolName}}">
                 {{--<option selected ="{{$schoolName}}"></option>--}}
@@ -38,17 +39,17 @@
                 @endforeach
             </select><br>
 
-        Year
-        <input id="year" value="{{$year}}" />
+            Year
+            <input name="yearTaken" id="year" value="{{$year}}" />
 
-        Instructor
-        <input id="instructor" value="{{$instructor}}" />
+            Instructor
+            <input name="instructor" id="instructor" value="{{$instructor}}" />
 
-        Price
-        <input id="price" value="{{$price}}" />
+            Price
+            <input name="price" id="price" value="{{$price}}" />
 
-        Description
-        <textarea id="description">{{$description}}</textarea>
+            Description
+            <textarea name ="description" id="description">{{$description}}</textarea>
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="user" value=" {{ \Auth::user()->id }}">

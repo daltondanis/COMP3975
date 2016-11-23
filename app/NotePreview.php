@@ -27,6 +27,28 @@ class NotePreview
         return $listings;
     }
 
+    public function getNotesByUser($user_id)
+    {
+
+        $listings = array();
+        $notes = DB::table('notes')->get();
+
+        foreach ($notes as $note)
+        {
+            if($note->user_id == $user_id) {
+                $img = $note->imagePath;
+                $courseID = $note->courseName;
+                $courseName = $note->title;
+                $price = $note->price;
+                $noteId = $note->id;
+                //$username = $user->username;
+                $listing = new Listing($courseID, $price, $courseName, $img, $noteId);
+                $listings[] = $listing;
+            }
+        }
+        return $listings;
+    }
+
     public function getNotesBySchool($schoolName)
     {
         $school = DB::table('schools')->where('name', $schoolName)->first();

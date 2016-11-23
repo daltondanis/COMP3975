@@ -29,11 +29,9 @@ Route::get('/post', 'PostController@create');
 Route::post('/post', 'PostController@store');
 
 
-
-
-
-//Route::get('/note', 'NoteController@display');
 Route::get('/note/{note}', 'NoteController@display');
 
-Route::get('/editNote', 'NoteController@edit');
-Route::post('/editNote', 'NoteController@update');
+Route::get('/myListings', 'ListingsController@userListings');
+
+Route::get('/editNote/{note}', 'NoteController@edit');
+Route::post('/editNote/{note}', 'NoteController@update');
