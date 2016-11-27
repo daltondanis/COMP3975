@@ -43,10 +43,11 @@
 
                         <div class="form-group">
                             <label class="searchLabel">PRICE RANGE</label><br/>
-                            <div class="col-xs-6">
+                            <div class="col-xs-4 col-md-5">
                                 <input type="text" name="minPrice" class="form-control" value="{{ $searchData['minPrice'] }}">
                             </div>
-                            <div class="col-xs-6">
+                            <div class="col-xs-4 col-md-2 dash">-</div>
+                            <div class="col-xs-4 col-md-5">
                                 <input type="text" name="maxPrice" class="form-control" value="{{ $searchData['maxPrice'] }}">
                             </div>
                         </div>
@@ -64,16 +65,18 @@
                     </form>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                @foreach ($listings as $key => $listing)
-                    <a href="/note/{{ $listing->noteId }}">
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumb">
-                            <img src="{{ URL::to('/') . $listing->image }}" alt="No image" class="img-responsive">
-                            <p>{{ $listing->courseId }} - ${{ $listing->price }}</p>
-                            <p>{{ $listing->courseName }}</p>
-                        </div>
-                    </a>
-                @endforeach
+            <div class="test">
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                    @foreach ($listings as $key => $listing)
+                        <a href="/note/{{ $listing->noteId }}">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumb">
+                                <img src="{{ URL::to('/') . $listing->image }}" alt="No image" class="img-responsive">
+                                <div class="listIdPrice">{{ $listing->courseId }} - ${{ $listing->price }}</div>
+                                <div class="listCourseName">{{ $listing->courseName }}</div>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
             </div>
         @endsection
     </div>

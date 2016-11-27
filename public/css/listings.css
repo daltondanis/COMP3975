@@ -27,19 +27,37 @@
     font-family: Blanch Condensed;
     font-size: 220%;
     line-height: 0.7;
+    height: 300px;
+    overflow: hidden;
 }
 
-.thumb  img {
+.thumb img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-/*
-img.note {
-    max-width: 200px;
     max-height: 200px;
 }
-*/
+
+.listIdPrice{
+    max-height: 55px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    word-wrap:break-word;
+}
+
+.listCourseName{
+    max-height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    word-wrap:break-word;
+}
+
+.dash{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
 
 .searchBar{
     background-color: #414548;
@@ -50,4 +68,8 @@ img.note {
 
 .searchLabel{
     color: #ffffff;
+}
+
+#searchButton{
+    margin-top: 50px;
 }
