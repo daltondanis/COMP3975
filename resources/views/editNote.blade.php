@@ -1,66 +1,66 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        .table {
-            max-width: 90%;
-            table-layout: fixed;
-            border: hidden;
-        }
-    </style>
-
-    <div class="content">
-        <form method="POST" enctype="multipart/form-data">
-            Title
-            <input name ="title" id="title" value="{{$title}}" />
-
-            Course
-            <input name = "course" id="course" value="{{$course}}" />
-
-            Image
-            <div class="uploadbutton">
-                <input type="file" name="myImage" id="file" class="inputfile" />
-                <label for="file" class="small2">upload</label>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                    <label class="small">Title: </label>
+                    <input class="form-control" type="text" name="title" value="{{$title}}">
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <label class="small">Program: </label>
+                    <input class="small form-control" type ="text" name="program">
+                </div>
+                
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <label class="small">School: </label>
+                    <select class="form-control" name="schools" value="{{$schoolName}}">
+                        @foreach($schools as $key => $school)
+                            <option class="options" value="{{$key}}">{{$school}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <label class="small">Course: </label>
+                    <input class="small form-control" type ="text" name="course" value="{{$course}}">
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <label class="small">Year: </label>
+                    <input class="small form-control" type ="number" value="2016" name="yearTaken" value="{{$year}}">
+                </div>
+                
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <label class="small">Instructor: </label>
+                    <input class="small form-control" type="text" name="instructor" value="{{$instructor}}">
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <label class="small">Price: </label>
+                    <input class="small form-control" type="number" name="price" value="{{$price}}">
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <label class="small">Image: </label>
+                    <input class="form-control" type="file" name="myImage" value="{{$imagePath}}" required>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label class="title">Description: </label><br>
+                    <textarea class="input_description form-control" name="description">{{$description}}</textarea>
+                </div>
             </div>
-            <input type ="hidden" name="originalImage" value="{{$imagePath}}" />
-            <input type="text" name="fileName" value="Input a file" class="myinput form-control filename" readonly>
+        </div>
 
-            School
-            <select class="form-control t" name="schools" value="{{$schoolName}}">
-                @foreach($schools as $key => $school)
-                    @if ($school == $schoolName)
-                        <option class="options"  value="{{$key}}" selected>{{$school}}</option>
-                    @else
-                        <option class="options" value="{{$key}}">{{$school}}</option>
-                    @endif
-                @endforeach
-            </select><br>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="user" value=" {{ \Auth::user()->id }}">
 
-            Year
-            <input name="yearTaken" id="year" value="{{$year}}" />
-
-            Instructor
-            <input name="instructor" id="instructor" value="{{$instructor}}" />
-
-            Price
-            <input name="price" id="price" value="{{$price}}" />
-
-            Description
-            <textarea name ="description" id="description">{{$description}}</textarea>
-
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="user" value=" {{ \Auth::user()->id }}">
-
-            <div class = "button">
-                <input class="submit" type="submit" name="submit" value=" ">
-            </div>
-        </form>
-
-        <form method="post" action ="{{$noteId}}/delete">
-            <div class = "button">
-                <input type="submit" name="delete" value="delete">
-            </div>
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        </form>
-    </div>
+        <div class = "button">
+            <input class="submit" type="submit" name="submit" value=" ">
+        </div>
+    </form>
+    <form method="post" action ="{{$noteId}}/delete">
+        <div class = "button">
+            <input type="submit" name="delete" value="delete">
+        </div>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    </form>
+    
 @endsection
