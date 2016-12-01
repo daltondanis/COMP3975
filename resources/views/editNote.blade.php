@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <label class="small">Program: </label>
-                    <input class="small form-control" type ="text" name="program">
+                    <input class="small form-control" type ="text" name="program" value="{{$program}}">
                 </div>
                 
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <label class="small">Image: </label>
-                    <input class="form-control" type="file" name="myImage" value="{{$imagePath}}" required>
+                    <input class="form-control" type="file" name="myImage">
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <label class="title">Description: </label><br>

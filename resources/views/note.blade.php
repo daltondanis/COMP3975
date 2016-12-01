@@ -61,6 +61,7 @@
     </style>
     <div class="content">
         <ul class="details">
+            <li id="program">Program: {{$program}}</li>
             <li id="course">Course: {{$course}}</li>
             <li id="price">Price: ${{$price}}</li>
         </ul>

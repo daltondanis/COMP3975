@@ -11,7 +11,6 @@ use \Auth;
 
 class NoteController extends Controller
 {
-    //thi
 
     public function display($note) {
         $note = DB::table('notes')->where('id',$note)->first();
@@ -28,6 +27,7 @@ class NoteController extends Controller
         $description = $note->description;
         $imagePath = $note->imagePath;
         $price = $note->price;
+        $program = $note->program;
 
 
         $userId = $note->user_id;
@@ -35,10 +35,11 @@ class NoteController extends Controller
 
         $email = $user->email;
 
-        return view('note', compact('title', 'imagePath', 'course', 'schoolName', 'year', 'instructor', 'description', 'email', 'price'));
+        return view('note', compact('title', 'imagePath', 'course', 'program', 'schoolName', 'year', 'instructor', 'description', 'email', 'price'));
     }
 
     public function edit($note) {
+
         $note = DB::table('notes')->where('id',$note)->first();
 
         $noteId = $note->id;
@@ -64,6 +65,7 @@ class NoteController extends Controller
         $description = $note->description;
         $imagePath = $note->imagePath;
         $price = $note->price;
+        $program = $note->program;
 
 
         $userId = $note->user_id;
@@ -72,10 +74,14 @@ class NoteController extends Controller
         $email = $user->email;
         $schools = DB::table('schools')->orderBy('name', 'asc')->pluck('name', 'id');
 
-        return view('editNote', compact('title', 'course', 'schools', 'noteId', 'imagePath', 'schoolName', 'year', 'instructor', 'description', 'email', 'price'));
+        return view('editNote', compact('title', 'course', 'program', 'schools', 'noteId', 'imagePath', 'schoolName', 'year', 'instructor', 'description', 'email', 'price'));
     }
 
     public function update($note) {
+        if(($_FILES['myImage']['error'] == 1 || $_FILES['myImage']['error'] == 2)) {
+            return 'File too large. File must be less than 2 megabytes.';
+        }
+
         $note = DB::table('notes')->where('id',$note)->first();
 
         $title = Input::get('title');
@@ -88,6 +94,7 @@ class NoteController extends Controller
 
 
         if (Input::hasFile('myImage')) {
+
             $imagePath = Input::get('originalImage');
             $originalFilename = substr($imagePath, 8);
             \File::delete(public_path() .'/images/' . $originalFilename);

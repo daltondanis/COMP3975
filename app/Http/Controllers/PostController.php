@@ -17,6 +17,10 @@ class PostController extends Controller
     }
 
     public function store() {
+        if(($_FILES['myImage']['error'] == 1 || $_FILES['myImage']['error'] == 2)) {
+            return 'File too large. File must be less than 2 megabytes.';
+        }
+        
         $user_id  = Input::get('user');
 
         $title    = Input::get('title');
