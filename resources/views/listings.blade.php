@@ -15,7 +15,7 @@
                             <label class="searchLabel">SCHOOL</label><br/>
                             <select class="form-control t" name="schools">
                                 @if ($searchData['school'] == 0)
-                                    <option class="options" value="" selected="selected"></option>
+                                    <option class="options" value="" selected="selected">All</option>
                                     @foreach ($schools as $key => $school)
                                         <option class="options" value="{{ $key }}">{{ $school }}</option>
                                     @endforeach

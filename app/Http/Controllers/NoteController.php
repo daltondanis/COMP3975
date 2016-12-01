@@ -91,6 +91,7 @@ class NoteController extends Controller
         $instructor = Input::get('instructor');
         $description = Input::get('description');
         $price = Input::get('price');
+        $program = Input::get('program');
 
 
         if (Input::hasFile('myImage')) {
@@ -117,6 +118,7 @@ class NoteController extends Controller
                     'description' => $description,
                     'imagePath' => $filepath,
                     'price' => $price,
+                    'program' => $program,
                     'created_at' => new \DateTime(),
                     'updated_at' => new \DateTime()]);
 
@@ -132,6 +134,7 @@ class NoteController extends Controller
                     'teacher' => $instructor,
                     'description' => $description,
                     'price' => $price,
+                    'program' => $program,
                     'created_at' => new \DateTime(),
                     'updated_at' => new \DateTime()]);
 
