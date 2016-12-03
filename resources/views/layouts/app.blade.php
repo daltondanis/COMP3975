@@ -29,7 +29,7 @@
 
             <div class="left-header">
                 <a class="brand" href="{{ url('/') }}">
-                    <img src="images/logo.png" class="img_logo">
+                    <img src="{{URL::asset('/images/logo.png')}}" class="img_logo">
                     {{ config('app.name', 'Sell My Notes') }}
                 </a>
             </div>
