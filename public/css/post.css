@@ -264,24 +264,38 @@ label.teacher{
 
 .button{
     position: relative;
-    width: 98%;
+    width: 90%;
     display:inline-block;
-    left: 1%;
+    left: 5%;
     margin-top: 2%;
+
 }
 
-.back{
+.reset{
     float: left;
-    background-image: url("../images/back.png");
-    width:100px;
-    height: 46px;
+    background:url(../images/button-reset.png);
+    background-size: 100%;
+    width: 120px;
+    height: 36px;
+    border: 0;
+}
+
+.deletebtn{
+    float: left;
+    background:url(../images/button-delete.png);
+    background-size: 100%;
+    width: 120px;
+    height: 36px;
+    border: 0;
 }
 
 .submit{
     float: right;
-    background-image: url("../images/submit.png");
-    width:100px;
-    height: 46px;
+    background:url(../images/button-submit.png);
+    background-size: 100%;
+    width: 120px;
+    height: 36px;
+    border: 0;
 }
 
 .inputfile {

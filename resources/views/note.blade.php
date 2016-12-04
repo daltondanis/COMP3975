@@ -8,6 +8,7 @@
             src:url('../font/BebasNeue.otf');
             float: left;
             margin: auto;
+            font-size: 18px;
         }
 
         ul.details{
@@ -53,7 +54,7 @@
                 height: auto;
             }
             .details2{
-                margin-left: 4%;
+                margin-left: 7%;
             }
 
         }

@@ -54,13 +54,11 @@
 
         <div class = "button">
             <input class="submit" type="submit" name="submit" value=" ">
+            <form method="post" action ="{{$noteId}}/delete">
+                <input class="deletebtn" type="submit" name="delete" value=" ">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            </form>
         </div>
-    </form>
-    <form method="post" action ="{{$noteId}}/delete">
-        <div class = "button">
-            <input type="submit" name="delete" value="delete">
-        </div>
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
     
 @endsection
