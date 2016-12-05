@@ -8,9 +8,13 @@
 
     <div class="row">
         @section('content')
-            <h2>
-                Note Listings
-            </h2>
+            <div class="text-center">
+                <h2>
+                    <strong>
+                    Note Listings
+                    </strong>
+                </h2>
+            </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 searchBar">
 
                 <div class="sidebar">
