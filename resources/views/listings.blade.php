@@ -63,12 +63,19 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group center-block">
+                            <div style="float:right;">
                             <button type="submit" id="searchButton" name="searchbutton" class="btn btn-warning center-block">
                                 SEARCH
                             </button>
-                            <a href="">
-                                CLEAR
-                            </a>
+                            </div>
+                            <div style="float:left;">
+                                <button type="submit" id="searchButton" name="searchbutton" class="btn btn-warning center-block">
+                                    <a href="" style="color:white; text-decoration: none;">
+                                    CLEAR
+                                    </a>
+                                </button>
+                                <br/>
+                            </div>
                         </div>
                     </form>
                 </div>

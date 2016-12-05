@@ -37,8 +37,6 @@
 
                 <div class="right-header">
                     <ul class="list">
-                        <li><a class="headerLink" href="{{ url('/login') }}">My Listings</a></li>
-                        <li><a class="headerLink" href="{{ url('/login') }}">Create</a></li>
                         @if (Auth::guest())
                             <li><a class="headerLink" href="{{ url('/login') }}">Log In</a></li>
                             <li><a class="headerLink" href="{{ url('/register') }}">Sign Up</a></li>

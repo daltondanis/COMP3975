@@ -37,10 +37,13 @@
 
             <div class="right-header">
                 <ul class="list">
+                    @if (!Auth::guest())
                     <li><a class="headerLink" href="{{ url('/') }}">Browse</a></li>
                     <li><a class="headerLink" href="{{ url('/myListings') }}">My Listings</a></li>
                     <li><a class="headerLink" href="{{ url('/post') }}">Post a Note</a></li>
                     <li><a class="headerLink" href="{{ url('/termsOfService') }}">Disclaimer</a></li>
+                    @endif
+
                     @if (Auth::guest())
                         <li><a class="headerLink" href="{{ url('/login') }}">Log In</a></li>
                         <li><a class="headerLink" href="{{ url('/register') }}">Sign Up</a></li>
