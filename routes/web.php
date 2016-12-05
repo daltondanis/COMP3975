@@ -43,3 +43,6 @@ Route::post('/editNote/{note}', 'NoteController@update');
 
 //deleting a note from edit a note page
 Route::post('/editNote/{note}/delete', 'NoteController@delete');
+
+//Terms and conditions
+Route::get('/termsOfService', 'HomeController@termsOfService');
