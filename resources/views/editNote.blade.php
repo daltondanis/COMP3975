@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
     <form method="POST" enctype="multipart/form-data">
         <div class="container">
+            <h2>
+                Edit Note
+            </h2>
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                     <label class="small">Title: </label>

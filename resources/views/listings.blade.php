@@ -5,8 +5,12 @@
 <link href="/css/listings.css" rel="stylesheet">
 
 <div class="container">
+
     <div class="row">
         @section('content')
+            <h2>
+                Note Listings
+            </h2>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 searchBar">
 
                 <div class="sidebar">

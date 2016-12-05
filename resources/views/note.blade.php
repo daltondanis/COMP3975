@@ -61,6 +61,9 @@
 
     </style>
     <div class="content">
+        <h2>
+            Note Details
+        </h2>
         <ul class="details">
             <li id="program">Program: {{$program}}</li>
             <li id="course">Course: {{$course}}</li>

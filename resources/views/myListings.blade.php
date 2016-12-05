@@ -8,7 +8,11 @@
 <div class="container">
     <div class="row">
         @section('content')
+
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <h2>
+                    My Listings
+                </h2>
                 @foreach ($listings as $key => $listing)
                 <a href="/editNote/{{ $listing->noteId }}">
                       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumb">
