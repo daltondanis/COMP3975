@@ -69,11 +69,13 @@
                             </button>
                             </div>
                             <div style="float:left;">
+                                <a href="" style="color:white; text-decoration: none;">
                                 <button type="submit" id="searchButton" name="searchbutton" class="btn btn-warning center-block">
                                     <a href="" style="color:white; text-decoration: none;">
                                     CLEAR
                                     </a>
                                 </button>
+                                </a>
                                 <br/>
                             </div>
                         </div>
