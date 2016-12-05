@@ -54,11 +54,11 @@ class NotePreview
         }
 
         if(!empty($course)){
-            $notes = $notes->where('courseName', 'LIKE', '%' . $course . '%');
+            $notes = $notes->where('courseName', 'LIKE', '%' . str_replace(' ', '', $course) . '%');
         }
 
         if(!empty($program)){
-            $notes = $notes->where('program', 'LIKE', '%' . $program . '%');
+            $notes = $notes->where('program', 'LIKE', '%' . str_replace(' ', '', $program) . '%');
         }
 
         $minval = 0;
