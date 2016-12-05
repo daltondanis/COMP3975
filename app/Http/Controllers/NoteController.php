@@ -86,7 +86,8 @@ class NoteController extends Controller
 
         $title = Input::get('title');
         $school_id = Input::get('schools');
-        $course = Input::get('course');
+        $course   = Input::get('course');
+        $course = str_replace(' ', '', $course);
         $yearTaken = Input::get('yearTaken');
         $instructor = Input::get('instructor');
         $description = Input::get('description');

@@ -2,19 +2,19 @@
 
 @section('content')
 
+    <div class="text-center">
+        <h2>
+            <strong>
+                Edit Note
+            </strong>
+        </h2>
+    </div>
     <form method="POST" enctype="multipart/form-data">
         <div class="container">
-            <div class="text-center">
-                <h2>
-                    <strong>
-                        Edit Note
-                    </strong>
-                </h2>
-            </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                     <label class="small">Title: </label>
-                    <input class="form-control" type="text" name="title" value="{{$title}}" required>
+                    <input class="small form-control" type="text" name="title" value="{{$title}}" required>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <label class="small">Program: </label>
@@ -62,11 +62,12 @@
 
         <div class = "button">
             <input class="submit" type="submit" name="submit" value=" ">
-            <form method="post" action ="{{$noteId}}/delete">
-                <input class="deletebtn" type="submit" name="delete" value=" ">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            </form>
+            <input form="delete" class="deletebtn" type="submit" name="delete" value=" ">
         </div>
+    </form>
+
+    <form method="post" id="delete" action ="{{$noteId}}/delete">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
     
 @endsection

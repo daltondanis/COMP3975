@@ -3,6 +3,7 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <link href="/css/listings.css" rel="stylesheet">
+
 <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
 <div class="container">

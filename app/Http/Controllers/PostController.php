@@ -27,6 +27,7 @@ class PostController extends Controller
         $school_id   = Input::get('schools');
         $program   = Input::get('program');
         $course   = Input::get('course');
+        $course = str_replace(' ', '', $course);
         $yearTaken   = Input::get('yearTaken');
         $instructor   = Input::get('instructor');
         $description   = Input::get('description');
