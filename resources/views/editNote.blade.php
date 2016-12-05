@@ -4,17 +4,21 @@
 
     <form method="POST" enctype="multipart/form-data">
         <div class="container">
-            <h2>
-                Edit Note
-            </h2>
+            <div class="text-center">
+                <h2>
+                    <strong>
+                        Edit Note
+                    </strong>
+                </h2>
+            </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                     <label class="small">Title: </label>
-                    <input class="form-control" type="text" name="title" value="{{$title}}">
+                    <input class="form-control" type="text" name="title" value="{{$title}}" required>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <label class="small">Program: </label>
-                    <input class="small form-control" type ="text" name="program" value="{{$program}}">
+                    <input class="small form-control" type ="text" name="program" value="{{$program}}" required>
                 </div>
                 
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -27,7 +31,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <label class="small">Course: </label>
-                    <input class="small form-control" type ="text" name="course" value="{{$course}}">
+                    <input class="small form-control" type ="text" name="course" value="{{$course}}" required>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <label class="small">Year: </label>
@@ -40,11 +44,11 @@
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <label class="small">Price: </label>
-                    <input class="small form-control" type="number" name="price" value="{{$price}}">
+                    <input class="small form-control" type="number" name="price" value="{{$price}}" min="0" required>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <label class="small">Image: </label>
-                    <input class="form-control" type="file" name="myImage">
+                    <input class="form-control" type="file"  accept="image/x-png,image/gif,image/jpeg" name="myImage">
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <label class="title">Description: </label><br>

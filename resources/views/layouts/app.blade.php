@@ -37,6 +37,7 @@
 
             <div class="right-header">
                 <ul class="list">
+                    <li><a class="headerLink" href="{{ url('/') }}">Browse</a></li>
                     <li><a class="headerLink" href="{{ url('/myListings') }}">My Listings</a></li>
                     <li><a class="headerLink" href="{{ url('/post') }}">Post a Note</a></li>
                     <li><a class="headerLink" href="{{ url('/termsOfService') }}">Disclaimer</a></li>

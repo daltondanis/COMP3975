@@ -2,9 +2,14 @@
 
 @section('content')
 
-    <h2>
-        Web Site Terms and Conditions of Use
-    </h2>
+
+    <div class="text-center">
+        <h2>
+            <strong>
+                Web Site Terms and Conditions of Use
+            </strong>
+        </h2>
+    </div>
 
     <h3>
         1. Terms
